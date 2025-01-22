@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Digital Signature System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+    .logo {
+        position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    .container {
+        /* background-color: green; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      padding: 0 10%;
+    }
+    .left-section {
+      width: 40%;
+      position: relative;
+      top: 50px;
+      margin-left: 110px;
+      padding: 20px;
+      /* background-color: rgb(123, 255, 0); */
+    }
+    .left-section h1 {
+      font-size: 2.5rem;
+      font-family: "Poppins", serif;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .system-title {
+        letter-spacing: 1px;
+        display: block;
+        font-family: "Poppins", serif;
+        font-size: 1.5rem;
+        color: #FF0000;
+        margin-top: 10px;
+    }
+    .left-section p {
+      font-size: 0.8rem;
+      color: #555555;
+      margin: 30px 0 30px 0;
+      font-family:"Poppins", serif;
+    }
+    .left-section p span {
+      color: #FF0000;
+      font-weight: bold;
+    }
+    .image-container {
+        text-align: center; /* Centers the image horizontally in the container */
+        position: relative; /* Ensures the image positioning is adjustable */
+    }
+    .image-container img {
+        position: relative; /* Allows fine adjustments */
+        top: -70px;
+        left: 120px; /* Moves the image 20px to the right */
+        width: 305px;
+        height: auto;
+        /* background-color: red; */
+        border-radius: 50%;
+    }
+    .right-section {
+      position: relative;
+      top: -70px;
+      width: 35%;
+      text-align: start;
+      /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
+      padding: 30px;
+      border-radius: 10px;
+      /* background-color: blue; */
+    }
+    .right-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: start;
+    }
+    ::placeholder {
+    color: red;
+    opacity: 0.5; 
+    font-size: 0.8rem;
+    }
+    
+
+    .form-group input, .login-button {
+      width: 350px;
+      /* height: 10px; */
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      background-color: #F0EFFF; 
+      
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: #FF0000;
+    }
+    .login-button {
+      /* width: 350px;
+      padding: 15px;
+      text-align: center; */
+      background-color: #DA2204;
+      color: #ffffff;
+      font-family: "Poppins", serif;
+      border: none;
+      border-radius: 8px;
+      /* box-shadow: 0 4 15px hsla(8, 85%, 34%, 0.671); */
+      box-shadow: 0 4px 15px rgba(218, 34, 4, 0.4); /* Optional shadow */
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .login-button:hover {
+      background-color: #cc0000; 
+    }
+    .password-container {
+      position: relative;
+    }
+    .password-container input {
+      width: 350px;
+      padding-right: 20px; /* Space for the eye icon */
+    }
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 100px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #FF7D95; /* Adjust color as needed */
+    }
+
+  </style>
+  <script>
+    function togglePasswordVisibility() {
+    const passwordInput = document.getElementById("password");
+    const toggleIcon = document.getElementById("toggle-icon");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      // toggleIcon.classList.remove("fa-eye");
+      // toggleIcon.classList.add("fa-eye-slash");
+      toggleIcon.classList.remove("fa-eye-slash");
+      toggleIcon.classList.add("fa-eye")
+    } else {
+      passwordInput.type = "password";
+      toggleIcon.classList.remove("fa-eye");
+      toggleIcon.classList.add("fa-eye-slash");
+    }
+   }
+
+  </script>
+  
+</head>
+<body>
+  <!-- Logo Section -->
+  <div class="logo">
+    <img src="Images/DoitungAppLogo.png" alt="Logo">
+  </div>
+
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+        <h1>Sign in to</h1>
+        <span class="system-title">Digital Signature System</span>
+        <p>
+          If you don’t have an account register<br>
+          You can <span>Contact the IT department!</span>
+        </p>
+        <div class="image-container">
+          <img src="Images/laptop-signature.png" alt="Digital Signature Illustration">
+        </div>
+      </div>
+      
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <h2>Sign in</h2>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Enter email or user name">
+        </div>
+        <!-- <div class="form-group">
+          <input type="password" placeholder="Password">
+        </div> -->
+        <div class="form-group password-container">
+          <input type="password" id="password" placeholder="Password">
+          <i class="toggle-password fa fa-eye-slash" id="toggle-icon" onclick="togglePasswordVisibility()"></i>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="login-button">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
